@@ -5,6 +5,162 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LitTask - Задания</title>
     <link rel="stylesheet" href="styles/main.css">
+    <styles>
+        /* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff; /* Белый фон */
+    color: #333; /* Темно-серый цвет текста */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #5b4979; /* Темно-фиолетовый */
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+header .logo img {
+    width: 150px; /* Логотип */
+    height: auto;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-top: 10px;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+nav .menu-item {
+    display: inline-block;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav .menu-item .icon-container {
+    background-color: #4b3f7e; /* Темно-фиолетовый фон */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+nav .menu-item .menu-icon {
+    width: 40px;
+    height: 40px;
+}
+
+/* Стиль для главного экрана */
+.welcome {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.welcome h2 {
+    font-size: 24px;
+    color: #5b4979;
+    margin-bottom: 20px;
+}
+
+.task-islands {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.task-island {
+    background-color: #4b3f7e; /* Темно-фиолетовый */
+    color: #fff;
+    padding: 30px;
+    width: 200px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.task-island:hover {
+    background-color: #5b4979; /* Более темный фиолетовый при наведении */
+}
+
+/* Стиль для задания */
+.task-container {
+    background-color: #f4f4f4; /* Белый фон с легким серым оттенком */
+    color: #333;
+    padding: 40px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.task-container h2 {
+    font-size: 28px;
+    color: #5b4979;
+    margin-bottom: 20px;
+}
+
+.task-container ol {
+    text-align: left;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+#answer {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #5b4979; /* Темно-фиолетовый бордер */
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.answer-btn {
+    background-color: #9c6fd5; /* Светлый фиолетовый */
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.answer-btn:hover {
+    background-color: #8b60b7; /* Темный фиолетовый при наведении */
+}
+
+/* Footer */
+footer {
+    background-color: #5b4979; /* Темно-фиолетовый */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin-top: 10px;
+}
+
+    </styles>
     <script>
         // Проверка, авторизован ли пользователь
         window.onload = function() {
