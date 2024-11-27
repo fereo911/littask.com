@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LitTask - Выход</title>
+<link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+<header>
+<div class="logo">
+<img src="images/logo.png" alt="LitTask Logo">
+<h1>LitTask</h1>
+</div>
+<nav>
+<a href="index.html">Главная</a>
+</nav>
+</header>
+
+<main>
+<section class="auth-section">
+<h2>Выход</h2>
+<p>Вы действительно хотите выйти?</p>
+<button onclick="logout()">Выйти</button>
+</section>
+</main>
+
+<footer>
+<p>© 2024 LitTask. Сделано с душой.</p>
+</footer>
+
+<script>
+function logout() {
+localStorage.removeItem('username');
+localStorage.removeItem('email');
+localStorage.removeItem('password');
+localStorage.removeItem('registrationDate');
+alert('Вы успешно вышли!');
+window.location.href = 'login.html';
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 2 - LitTask</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="images/logo.png" alt="LitTask Logo">
+        <h1>LitTask</h1>
+    </div>
+    <nav>
+        <a href="index.html" class="menu-item">Главная</a>
+        <a href="profile.html" class="menu-item">Профиль</a>
+    </nav>
+</header>
+
+<main>
+    <div class="task-container">
+        <h2>Задание 2: Лирика</h2>
+        
+        <p>Соотнесите лирическое произведение и его автора:</p>
+        <ol>
+            <li>А) «Я помню чудное мгновенье...»</li>
+            <li>Б) «Из-под таинственной холодной полумаски...»</li>
+            <li>В) «О как убийственно мы любим»</li>
+        </ol>
+        <ol>
+            <li>1) Ф.И.Тютчев</li>
+            <li>2) А.С.Пушкин</li>
+            <li>3) М.Ю.Лермонтов</li>
+        </ol>
+        <label for="answer">Ваш ответ:</label>
+        <textarea id="answer" name="answer" rows="5" placeholder="Введите свой ответ сюда..."></textarea>
+        <button class="answer-btn" onclick="checkAnswer()">Ответить</button>
+        
+        <div id="result"></div>
+
+        
+    </div>
+</main>
+
+<footer>
+    <p>© 2024 LitTask. Сделано с душой.</p>
+</footer>
+
+<script>
+    // Функция для проверки лирики (автор и произведение)
+    function checkAnswer() {
+        var userAnswer = document.getElementById('answer').value.trim().toLowerCase();
+        var correctAnswer = "231"; // Правильный ответ (231)
+
+        if (userAnswer === correctAnswer) {
+            document.getElementById('result').innerHTML = "<p class='correct'>Правильный ответ!</p>";
+        } else {
+            document.getElementById('result').innerHTML = "<p class='incorrect'>Неверный ответ. Попробуйте снова!</p>";
+        }
+    }
+
+    // Функция для проверки темы
+    function checkThemesAnswer() {
+        var userAnswer = document.getElementById('themes-answer').value.trim().toLowerCase();
+        var correctAnswer = "231"; // Правильный ответ (231)
+
+        if (userAnswer === correctAnswer) {
+            document.getElementById('themes-result').innerHTML = "<p class='correct'>Правильный ответ!</p>";
+        } else {
+            document.getElementById('themes-result').innerHTML = "<p class='incorrect'>Неверный ответ. Попробуйте снова!</p>";
+        }
+    }
+</script>
+
+</body>
+</html>

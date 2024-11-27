@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LitTask - Задания</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script>
+        // Проверка, авторизован ли пользователь
+        window.onload = function() {
+            // Проверяем, есть ли данные о пользователе в localStorage
+            if (!localStorage.getItem('userLoggedIn')) {
+                // Если нет, перенаправляем на страницу профиля
+                window.location.href = 'profile.html';
+            }
+        };
+    </script>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="images/logo.png" alt="LitTask Logo">
+        <h1>LitTask</h1>
+    </div>
+    <nav>
+        <a href="index.html" class="menu-item">Главная</a>
+        <a href="profile.html" class="menu-item">Профиль</a>
+    </nav>
+</header>
+
+<main>
+    <div class="welcome">
+        <h2>Мы поможем вам подготовиться к ЕГЭ по литературе</h2>
+        <section class="task-islands">
+            <div class="task-island" onclick="window.location.href='task1.html'">
+                <h3>Проза</h3>
+            </div>
+            <div class="task-island" onclick="window.location.href='task2.html'">
+                <h3>Лирика</h3>
+            </div>
+            <div class="task-island" onclick="window.location.href='task3.html'">
+                <h3>Драма</h3>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <p>© 2024 LitTask. Сделано с душой.</p>
+</footer>
+
+</body>
+</html>

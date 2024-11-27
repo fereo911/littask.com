@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль - LitTask</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4a3c66;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .profile-container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-container h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .profile-item {
+            margin-bottom: 20px;
+        }
+
+        .profile-item label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .profile-item p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .home-btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: #4a3c66;
+            color: #fff;
+            text-align: center;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .home-btn:hover {
+            background-color: #362446;
+        }
+
+        footer {
+            background-color: #4a3c66;
+            text-align: center;
+            padding: 15px;
+            color: #fff;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            // Получаем данные из localStorage
+            var userName = localStorage.getItem('userName');
+            var userEmail = localStorage.getItem('userEmail');
+            var userDob = localStorage.getItem('userDob');
+
+            // Если пользователь не авторизован, перенаправляем его на страницу входа
+            if (!localStorage.getItem('userLoggedIn')) {
+                window.location.href = 'login.html';
+            }
+
+            // Отображаем информацию о пользователе на странице
+            document.getElementById('user-name').innerText = userName;
+            document.getElementById('user-email').innerText = userEmail;
+            document.getElementById('user-dob').innerText = userDob;
+        };
+
+        function goToHome() {
+            window.location.href = 'index.html'; // Перенаправляем на главную страницу
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="images/logo.png" alt="LitTask Logo">
+        <h1>LitTask</h1>
+    </div>
+</header>
+
+<main>
+    <div class="profile-container">
+        <h2>Ваш профиль</h2>
+        <div class="profile-item">
+            <label for="name">Имя</label>
+            <p id="user-name"></p>
+        </div>
+        <div class="profile-item">
+            <label for="email">Электронная почта</label>
+            <p id="user-email"></p>
+        </div>
+        <div class="profile-item">
+            <label for="dob">Дата рождения</label>
+            <p id="user-dob"></p>
+        </div>
+
+        <!-- Кнопка для перехода на главную страницу -->
+        <button class="home-btn" onclick="goToHome()">Главная</button>
+    </div>
+</main>
+
+<footer>
+    <p>© 2024 LitTask. Сделано с душой.</p>
+</footer>
+
+</body>
+</html>

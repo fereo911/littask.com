@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 3 - LitTask</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="images/logo.png" alt="LitTask Logo">
+        <h1>LitTask</h1>
+    </div>
+    <nav>
+        <a href="index.html" class="menu-item">Главная</a>
+        <a href="profile.html" class="menu-item">Профиль</a>
+    </nav>
+</header>
+
+<main>
+    <div class="task-container">
+        <h2>Задание 3: Поэтика</h2>
+        
+        <p>Соотнесите персонажей с их характеристиками:</p>
+        <ol>
+            <li>А) Любовь Андреевна Раневская</li>
+            <li>Б) Лопахин Ермолей Алексеевич</li>
+            <li>В) Гаев Леонид Андреевич</li>
+        </ol>
+        <ol>
+            <li>1) Склонен к сентиментальности...</li>
+            <li>2) Эмоциональная и непрактичная...</li>
+            <li>3) Родом из мужицкого сословия...</li>
+        </ol>
+        <label for="answer">Ваш ответ:</label>
+        <textarea id="answer" name="answer" rows="5" placeholder="Введите свой ответ сюда..."></textarea>
+        <button class="answer-btn" onclick="checkAnswer()">Ответить</button>
+        
+        <div id="result"></div>
+    </div>
+</main>
+
+<footer>
+    <p>© 2024 LitTask. Сделано с душой.</p>
+</footer>
+
+<script>
+    // Функция для проверки театрального задания
+    function checkAnswer() {
+        var userAnswer = document.getElementById('answer').value.trim().toLowerCase();
+        var correctAnswer = "231"; // Правильный ответ (231)
+
+        if (userAnswer === correctAnswer) {
+            document.getElementById('result').innerHTML = "<p class='correct'>Правильный ответ!</p>";
+        } else {
+            document.getElementById('result').innerHTML = "<p class='incorrect'>Неверный ответ. Попробуйте снова!</p>";
+        }
+    }
+</script>
+
+</body>
+</html>
