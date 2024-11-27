@@ -75,6 +75,23 @@
             background-color: #362446;
         }
 
+        .register-link {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .register-link a {
+            color: #4a3c66;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+
         footer {
             background-color: #4a3c66;
             text-align: center;
@@ -125,6 +142,10 @@
             <input type="password" id="password" placeholder="Введите пароль" required />
         </div>
         <button class="submit-btn" onclick="loginUser()">Войти</button>
+        <!-- Кнопка для регистрации -->
+        <div class="register-link">
+            <p>Нет аккаунта? <a href="register.html">Зарегистрироваться</a></p>
+        </div>
     </div>
 </main>
 
