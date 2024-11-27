@@ -5,16 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LitTask - Задания</title>
     <link rel="stylesheet" href="styles/main.css">
-    <script>
-        // Проверка, авторизован ли пользователь
-        window.onload = function() {
-            // Проверяем, есть ли данные о пользователе в localStorage
-            if (!localStorage.getItem('userLoggedIn')) {
-                // Если нет, перенаправляем на страницу профиля
-                window.location.href = 'profile.html';
-            }
-        };
-        <styles>
+    <style>
         /* Общие стили */
 * {
     margin: 0;
@@ -169,7 +160,16 @@ footer p {
     margin-top: 10px;
 }
 
-    </styles>
+    </style>
+    <script>
+        // Проверка, авторизован ли пользователь
+        window.onload = function() {
+            // Проверяем, есть ли данные о пользователе в localStorage
+            if (!localStorage.getItem('userLoggedIn')) {
+                // Если нет, перенаправляем на страницу профиля
+                window.location.href = 'profile.html';
+            }
+        };
     </script>
 </head>
 <body>
