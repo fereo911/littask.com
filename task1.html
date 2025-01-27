@@ -323,27 +323,45 @@ footer p {
 
     
 
-    <script>
-        // Функция для перехода в зависимости от текущего раздела
+ <script>
+        // Функция для перехода к следующему заданию
         function goToNext() {
-            // Определяем текущий раздел, можно делать это через URL или другую логику
-            let currentSection = 'section1'; // Здесь будет логика для получения текущего раздела
+            // Получаем текущий номер задания
+            let currentTaskNumber = getCurrentTaskNumber();
 
-            if (currentSection === 'section1') {
-                // Переход на Task 2
-                window.location.href = 'task2.html';
-            } else if (currentSection === 'section2') {
-                // Переход на Task 3
-                window.location.href = 'task3.html';
+            // Увеличиваем номер задания на 1
+            let nextTaskNumber = currentTaskNumber + 1;
+
+            // Если следующее задание - task10, направляем в профиль
+            if (nextTaskNumber > 9) {
+                goToProfile();  // Переход в профиль
             } else {
-                // Если раздел неизвестен, можно перейти к Task 2 по умолчанию
-                window.location.href = 'task2.html';
+                // Переход на следующее задание
+                window.location.href = `task${nextTaskNumber}.html`;
             }
         }
 
         // Функция для перехода в главное меню
         function goToMainMenu() {
             window.location.href = 'main_menu.html'; // Переход в главное меню
+        }
+
+        // Функция для перехода в профиль после выполнения task9
+        function goToProfile() {
+            window.location.href = 'profile.html'; // Переход в профиль
+        }
+
+        // Функция для получения номера текущего задания из URL
+        function getCurrentTaskNumber() {
+            // Извлекаем номер задания из URL (например, task1.html, task2.html)
+            let url = window.location.href;
+            let taskMatch = url.match(/task(\d+)\.html/); // Регулярное выражение для поиска taskX.html
+
+            if (taskMatch && taskMatch[1]) {
+                return parseInt(taskMatch[1]); // Возвращаем номер задания как число
+            } else {
+                return 1; // Если не удается получить номер задания, по умолчанию начинаем с task1
+            }
         }
     </script>
 </body>
