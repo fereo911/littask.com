@@ -75,6 +75,23 @@
             background-color: #362446;
         }
 
+        .skip-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #ddd;
+            color: #333;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .skip-btn:hover {
+            background-color: #ccc;
+        }
+
         footer {
             background-color: #4a3c66;
             text-align: center;
@@ -106,6 +123,14 @@
 
             // Перенаправляем на профиль после регистрации
             window.location.href = 'profile.html';
+        }
+
+        function skipRegistration() {
+            // Сохраняем информацию о том, что пользователь пропустил регистрацию
+            localStorage.setItem('userLoggedIn', false);
+
+            // Перенаправляем на страницу профиля или главную страницу
+            window.location.href = 'profile.html'; // Можете изменить на главную страницу
         }
     </script>
 </head>
@@ -142,6 +167,9 @@
             <input type="password" id="confirm-password" placeholder="Подтвердите пароль" required />
         </div>
         <button class="submit-btn" onclick="registerUser()">Зарегистрироваться</button>
+
+        <!-- Кнопка пропуска регистрации -->
+        <button class="skip-btn" onclick="skipRegistration()">Пропустить регистрацию</button>
     </div>
 </main>
 
