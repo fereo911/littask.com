@@ -229,7 +229,33 @@ footer p {
             document.getElementById('characters-result').innerHTML = "<p class='incorrect'>Неверный ответ. Попробуйте снова!</p>";
         }
     }
-</script>
+  <!-- Кнопка перехода зависит от текущего раздела -->
+    <button id="nextButton" onclick="goToNext()">Перейти к следующему заданию</button>
+    <button onclick="goToMainMenu()">Главное меню</button>
 
+    <script>
+        // Функция для перехода в зависимости от текущего раздела
+        function goToNext() {
+            // Определяем текущий раздел, можно делать это через URL или другую логику
+            let currentSection = 'section1'; // Здесь будет логика для получения текущего раздела
+
+            if (currentSection === 'section1') {
+                // Переход на Task 2
+                window.location.href = 'task2.html';
+            } else if (currentSection === 'section2') {
+                // Переход на Task 3
+                window.location.href = 'task3.html';
+            } else {
+                // Если раздел неизвестен, можно перейти к Task 2 по умолчанию
+                window.location.href = 'task2.html';
+            }
+        }
+
+        // Функция для перехода в главное меню
+        function goToMainMenu() {
+            window.location.href = 'main_menu.html'; // Переход в главное меню
+        }
+    </script>
 </body>
 </html>
+
