@@ -297,30 +297,46 @@ footer p {
 </footer>
 
 <script>
-    // Функция для проверки лирики (автор и произведение)
-    function checkAnswer() {
-        var userAnswer = document.getElementById('answer').value.trim().toLowerCase();
-        var correctAnswer = "231"; // Правильный ответ (231)
+        // Функция для перехода к следующему заданию
+        function goToNext() {
+            // Получаем текущий номер задания
+            let currentTaskNumber = getCurrentTaskNumber();
 
-        if (userAnswer === correctAnswer) {
-            document.getElementById('result').innerHTML = "<p class='correct'>Правильный ответ!</p>";
-        } else {
-            document.getElementById('result').innerHTML = "<p class='incorrect'>Неверный ответ. Попробуйте снова!</p>";
+            // Увеличиваем номер задания на 1
+            let nextTaskNumber = currentTaskNumber + 1;
+
+            // Если следующее задание - task10, направляем в профиль
+            if (nextTaskNumber > 9) {
+                goToProfile();  // Переход в профиль
+            } else {
+                // Переход на следующее задание
+                window.location.href = `task${nextTaskNumber}.html`;
+            }
         }
-    }
 
-    // Функция для проверки темы
-    function checkThemesAnswer() {
-        var userAnswer = document.getElementById('themes-answer').value.trim().toLowerCase();
-        var correctAnswer = "231"; // Правильный ответ (231)
-
-        if (userAnswer === correctAnswer) {
-            document.getElementById('themes-result').innerHTML = "<p class='correct'>Правильный ответ!</p>";
-        } else {
-            document.getElementById('themes-result').innerHTML = "<p class='incorrect'>Неверный ответ. Попробуйте снова!</p>";
+        // Функция для перехода в главное меню
+        function goToMainMenu() {
+            window.location.href = 'main_menu.html'; // Переход в главное меню
         }
-    }
-</script>
+
+        // Функция для перехода в профиль после выполнения task9
+        function goToProfile() {
+            window.location.href = 'profile.html'; // Переход в профиль
+        }
+
+        // Функция для получения номера текущего задания из URL
+        function getCurrentTaskNumber() {
+            // Извлекаем номер задания из URL (например, task1.html, task2.html)
+            let url = window.location.href;
+            let taskMatch = url.match(/task(\d+)\.html/); // Регулярное выражение для поиска taskX.html
+
+            if (taskMatch && taskMatch[1]) {
+                return parseInt(taskMatch[1]); // Возвращаем номер задания как число
+            } else {
+                return 1; // Если не удается получить номер задания, по умолчанию начинаем с task1
+            }
+        }
+    </script>
 
 </body>
 </html>
