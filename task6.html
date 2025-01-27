@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 6 - LitTask</title>
+    <link rel="stylesheet" href="styles/main.css">
+<style>
+        /* Общие стили */
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fff; /* Белый фон */
+            color: #333; /* Темно-серый цвет текста */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #5b4979; /* Темно-фиолетовый */
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header .logo img {
+            width: 150px; /* Логотип */
+            height: auto;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-top: 10px;
+        }
+
+        .task-container {
+            background-color: #f4f4f4; /* Белый фон с легким серым оттенком */
+            color: #333;
+            padding: 40px;
+            margin: 20px auto;
+            max-width: 600px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .task-container h2 {
+            font-size: 28px;
+            color: #5b4979;
+            margin-bottom: 20px;
+        }
+
+        /* Стиль для кнопок */
+        .btn {
+            background-color: #9c6fd5; /* Светлый фиолетовый */
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: #8b60b7; /* Темный фиолетовый при наведении */
+        }
+
+        .btn-main-menu {
+            background-color: #5b4979; /* Темно-фиолетовый */
+            font-size: 18px;
+        }
+
+        .btn-main-menu:hover {
+            background-color: #4b3f7e; /* Еще темнее при наведении */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #5b4979; /* Темно-фиолетовый */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            margin-top: 10px;
+        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff; /* Белый фон */
+    color: #333; /* Темно-серый цвет текста */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #5b4979; /* Темно-фиолетовый */
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+header .logo img {
+    width: 150px; /* Логотип */
+    height: auto;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-top: 10px;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+nav .menu-item {
+    display: inline-block;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav .menu-item .icon-container {
+    background-color: #4b3f7e; /* Темно-фиолетовый фон */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+nav .menu-item .menu-icon {
+    width: 40px;
+    height: 40px;
+}
+
+/* Стиль для главного экрана */
+.welcome {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.welcome h2 {
+    font-size: 24px;
+    color: #5b4979;
+    margin-bottom: 20px;
+}
+
+.task-islands {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.task-island {
+    background-color: #4b3f7e; /* Темно-фиолетовый */
+    color: #fff;
+    padding: 30px;
+    width: 200px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.task-island:hover {
+    background-color: #5b4979; /* Более темный фиолетовый при наведении */
+}
+
+/* Стиль для задания */
+.task-container {
+    background-color: #f4f4f4; /* Белый фон с легким серым оттенком */
+    color: #333;
+    padding: 40px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.task-container h2 {
+    font-size: 28px;
+    color: #5b4979;
+    margin-bottom: 20px;
+}
+
+.task-container ol {
+    text-align: left;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+#answer {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #5b4979; /* Темно-фиолетовый бордер */
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.answer-btn {
+    background-color: #9c6fd5; /* Светлый фиолетовый */
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.answer-btn:hover {
+    background-color: #8b60b7; /* Темный фиолетовый при наведении */
+}
+
+/* Footer */
+footer {
+    background-color: #5b4979; /* Темно-фиолетовый */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin-top: 10px;
+}
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="images/logo.png" alt="LitTask Logo">
+        <h1>LitTask</h1>
+    </div>
+    <nav>
+        <a href="index.html" class="menu-item">Главная</a>
+        <a href="profile.html" class="menu-item">Профиль</a>
+    </nav>
+</header>
+
+<main>
+    <div class="task-container">
+        <h2>Тематика</h2>
+        
+        <h3>Соотнесите лирическое произведение и его тематику:</h3>
+
+        <ol>
+            <p>А) Гражданская лирика​</p>
+            <p>Б) Любовная лирика​<p>
+            <p>В) Философская лирика<p>
+        </ol>
+        <ol>
+            <p>1) Ф.И.Тютчев « Silentium!»​<p>
+            <p>2) О.Э.Мандельштам «Мы живем, под собою не чуя страны...»​<p>
+            <p>3) А.С.Пушкин «Я вас любил...»​​<p>
+        </ol>
+        <label for="answer">Ваш ответ:</label>
+        <textarea id="answer" name="answer" rows="5" placeholder="Введите свой ответ(пример: 123)"></textarea>
+        <button class="answer-btn" onclick="checkAnswer()">Ответить</button>
+        
+        <div id="result"></div>
+
+       <button id="nextButton" class="btn" onclick="goToNext()">Перейти к следующему заданию</button>
+        
+    </div>
+
+
+</main>
+
+<footer>
+    <p>© 2024 LitTask. Сделано с душой.</p>
+</footer>
+<script>
+    // Функция для проверки первого задания (Авторы и их произведения)
+    function checkAnswer() {
+        var userAnswer = document.getElementById('answer').value.trim().toLowerCase();
+        var correctAnswer = "231"; // Правильный ответ (231)
+
+        if (userAnswer === correctAnswer) {
+            document.getElementById('result').innerHTML = "<p class='correct'>Правильный ответ!</p>";
+        } else {
+            document.getElementById('result').innerHTML = "<p class='incorrect'>Неверный ответ. Попробуйте снова!</p>";
+        }
+    }
+
+    // Функция для проверки второго задания (Герои прозы)
+    function checkCharactersAnswer() {
+        var userAnswer = document.getElementById('characters-answer').value.trim().toLowerCase();
+        var correctAnswer = "231"; // Правильный ответ (231)
+
+        if (userAnswer === correctAnswer) {
+            document.getElementById('characters-result').innerHTML = "<p class='correct'>Правильный ответ!</p>";
+        } else {
+            document.getElementById('characters-result').innerHTML = "<p class='incorrect'>Неверный ответ. Попробуйте снова!</p>";
+        }
+    }
+</script>
+
+    
+
+ <script>
+        // Функция для перехода к следующему заданию
+        function goToNext() {
+            // Получаем текущий номер задания
+            let currentTaskNumber = getCurrentTaskNumber();
+
+            // Увеличиваем номер задания на 1
+            let nextTaskNumber = currentTaskNumber + 1;
+
+            // Если следующее задание - task10, направляем в профиль
+            if (nextTaskNumber > 9) {
+                goToProfile();  // Переход в профиль
+            } else {
+                // Переход на следующее задание
+                window.location.href = `task${nextTaskNumber}.html`;
+            }
+        }
+
+        // Функция для перехода в главное меню
+        function goToMainMenu() {
+            window.location.href = 'main_menu.html'; // Переход в главное меню
+        }
+
+        // Функция для перехода в профиль после выполнения task9
+        function goToProfile() {
+            window.location.href = 'profile.html'; // Переход в профиль
+        }
+
+        // Функция для получения номера текущего задания из URL
+        function getCurrentTaskNumber() {
+            // Извлекаем номер задания из URL (например, task1.html, task2.html)
+            let url = window.location.href;
+            let taskMatch = url.match(/task(\d+)\.html/); // Регулярное выражение для поиска taskX.html
+
+            if (taskMatch && taskMatch[1]) {
+                return parseInt(taskMatch[1]); // Возвращаем номер задания как число
+            } else {
+                return 1; // Если не удается получить номер задания, по умолчанию начинаем с task1
+            }
+        }
+    </script>
+</body>
+</html>
+
+</body>
+</html>
+</body>
+</html>
