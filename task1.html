@@ -8,6 +8,94 @@
 <style>
         /* Общие стили */
 * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fff; /* Белый фон */
+            color: #333; /* Темно-серый цвет текста */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #5b4979; /* Темно-фиолетовый */
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header .logo img {
+            width: 150px; /* Логотип */
+            height: auto;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-top: 10px;
+        }
+
+        .task-container {
+            background-color: #f4f4f4; /* Белый фон с легким серым оттенком */
+            color: #333;
+            padding: 40px;
+            margin: 20px auto;
+            max-width: 600px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .task-container h2 {
+            font-size: 28px;
+            color: #5b4979;
+            margin-bottom: 20px;
+        }
+
+        /* Стиль для кнопок */
+        .btn {
+            background-color: #9c6fd5; /* Светлый фиолетовый */
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: #8b60b7; /* Темный фиолетовый при наведении */
+        }
+
+        .btn-main-menu {
+            background-color: #5b4979; /* Темно-фиолетовый */
+            font-size: 18px;
+        }
+
+        .btn-main-menu:hover {
+            background-color: #4b3f7e; /* Еще темнее при наведении */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #5b4979; /* Темно-фиолетовый */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            margin-top: 10px;
+        }
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -197,10 +285,10 @@ footer p {
         
         <div id="result"></div>
 
-       
+       <button id="nextButton" class="btn" onclick="goToNext()">Перейти к следующему заданию</button>
+        <button class="btn btn-main-menu" onclick="goToMainMenu()">Главное меню</button>
     </div>
-<button id="nextButton" onclick="goToNext()">Перейти к следующему заданию</button>
-    <button onclick="goToMainMenu()">Главное меню</button>
+
 
 </main>
 
