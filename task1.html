@@ -204,7 +204,74 @@ footer p {
 <footer>
     <p>© 2024 LitTask. Сделано с душой.</p>
 </footer>
+<script>
+    // Функция для проверки первого задания (Авторы и их произведения)
+    function checkAnswer() {
+        var userAnswer = document.getElementById('answer').value.trim().toLowerCase();
+        var correctAnswer = "231"; // Правильный ответ (231)
+
+        if (userAnswer === correctAnswer) {
+            document.getElementById('result').innerHTML = "<p class='correct'>Правильный ответ!</p>";
+        } else {
+            document.getElementById('result').innerHTML = "<p class='incorrect'>Неверный ответ. Попробуйте снова!</p>";
+        }
+    }
+
+    // Функция для проверки второго задания (Герои прозы)
+    function checkCharactersAnswer() {
+        var userAnswer = document.getElementById('characters-answer').value.trim().toLowerCase();
+        var correctAnswer = "213"; // Правильный ответ (213)
+
+        if (userAnswer === correctAnswer) {
+            document.getElementById('characters-result').innerHTML = "<p class='correct'>Правильный ответ!</p>";
+        } else {
+            document.getElementById('characters-result').innerHTML = "<p class='incorrect'>Неверный ответ. Попробуйте снова!</p>";
+        }
+    }
 </script>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 1</title>
+</head>
+<body>
+    <h1>Задание 1</h1>
+    <p>Описание задания...</p>
+
+    <!-- Кнопка перехода зависит от текущего раздела -->
+    <button id="nextButton" onclick="goToNext()">Перейти к следующему заданию</button>
+    <button onclick="goToMainMenu()">Главное меню</button>
+
+    <script>
+        // Функция для перехода в зависимости от текущего раздела
+        function goToNext() {
+            // Определяем текущий раздел, можно делать это через URL или другую логику
+            let currentSection = 'section1'; // Здесь будет логика для получения текущего раздела
+
+            if (currentSection === 'section1') {
+                // Переход на Task 2
+                window.location.href = 'task2.html';
+            } else if (currentSection === 'section2') {
+                // Переход на Task 3
+                window.location.href = 'task3.html';
+            } else {
+                // Если раздел неизвестен, можно перейти к Task 2 по умолчанию
+                window.location.href = 'task2.html';
+            }
+        }
+
+        // Функция для перехода в главное меню
+        function goToMainMenu() {
+            window.location.href = 'main_menu.html'; // Переход в главное меню
+        }
+    </script>
+</body>
+</html>
+
+</body>
+</html>
 </body>
 </html>
 
